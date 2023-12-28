@@ -30,4 +30,28 @@ class Base32Test extends TestCase
             $this->assertEquals($expected, Base32::encode($string));
         }
     }
+
+    public function test_decode(): void
+    {
+        $stringExpectedMaps = [
+            '' => '',
+            'MY======' => 'f',
+            'MZXQ====' => 'fo',
+            'MZXW6===' => 'foo',
+            'MZXW6YQ=' => 'foob',
+            'MZXW6YTB' => 'fooba',
+            'MZXW6YTBOI======' => 'foobar',
+            'ON2XEZJO' => 'sure.',
+            'ON2XEZI=' => 'sure',
+            'ON2XE===' => 'sur',
+            'ON2Q====' => 'su',
+            'NRSWC43VOJSS4===' => 'leasure.',
+            'MVQXG5LSMUXA====' => 'easure.',
+            'MFZXK4TFFY======' => 'asure.',
+        ];
+
+        foreach ($stringExpectedMaps as $string => $expected) {
+            $this->assertEquals($expected, Base32::decode($string));
+        }
+    }
 }
