@@ -9,7 +9,7 @@
 # 安裝
 
 ```shell
-composer install mika/base32 "^1.0"
+composer require mika/base32 "^1.0"
 ```
 
 ## 用法

@@ -9,7 +9,7 @@ Base32 Encode and Decode according to [RFC 4648](https://datatracker.ietf.org/do
 ## Installation
 
 ```shell
-composer install mika/base32 "^1.0"
+composer require mika/base32 "^1.0"
 ```
 
 ## Usage
